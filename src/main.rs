@@ -1,6 +1,5 @@
 use std::collections::BTreeMap;
-use std::io::{stdin, Read};
-use std::ascii::AsciiExt as _;
+use std::io::stdin;
 
 fn main() {
 	let mut counts: BTreeMap<char, usize> = BTreeMap::default();
