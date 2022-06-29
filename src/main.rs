@@ -8,7 +8,9 @@ fn main() {
 	for ch in &mut reader {
 		let ch = ch.expect("Invalid UTF-8");
 		let ch = ch.to_ascii_lowercase();
-		if ch.is_control() || ch == ' ' { continue; }
+		if ch.is_control() || ch == ' ' {
+			continue;
+		}
 		*counts.entry(ch).or_default() += 1;
 	}
 	println!("{:#?}", counts);
