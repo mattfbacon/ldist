@@ -16,9 +16,10 @@ fn main() {
 	println!("{:#?}", counts);
 
 	let max_within_letters = counts.iter().map(|(&_ch, &count)| count).max().unwrap() as f64;
+	let count_width = max_within_letters.log10().ceil() as usize;
 	const BAR_SIZE: f64 = 50.0;
 	for (&ch, &count) in counts.iter() {
-		print!("{ch:2} ({count:4})| ");
+		print!("{ch:2} ({count:count_width$})| ");
 		let this_bar_size = (count as f64 / max_within_letters) * BAR_SIZE;
 		for _ in 0..(this_bar_size.round() as usize) {
 			print!("=");
