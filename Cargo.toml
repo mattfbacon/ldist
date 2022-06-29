@@ -1,0 +1,7 @@
+[package]
+name = "ldist"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+utf8-read = "0.4"
